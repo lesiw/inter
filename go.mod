@@ -1,0 +1,3 @@
+module lesiw.io/inter
+
+go 1.21.3
