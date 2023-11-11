@@ -10,14 +10,13 @@ inter <file1> <file2> ... <fileN>
 
 ## Installation
 
-### via `curl`
+### `curl`
 
 ```sh 
-> inter curl -L https://github.com/lesiw/inter/releases/latest/download/inter-`uname -s`-`uname -m`
-sudo install inter /usr/local/bin/inter
+curl -L lesiw.io/inter | sh
 ```
 
-### via `go install`
+### `go install`
 
 ```sh
 go install lesiw.io/inter@latest
