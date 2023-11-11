@@ -12,7 +12,7 @@ var errUsage = fmt.Errorf("Usage: %s <file1> <file2> ... <fileN>", os.Args[0])
 
 func main() {
 	if err := run(); err != nil {
-		fmt.Fprintf(os.Stderr, "Error: %s\n", err)
+		fmt.Fprintf(os.Stderr, "%s\n", err)
 		os.Exit(1)
 	}
 }
