@@ -20,5 +20,5 @@ sudo install inter /usr/local/bin/inter
 ### via `go install`
 
 ```sh
-go install lesiw.io/inter
+go install lesiw.io/inter@latest
 ```
