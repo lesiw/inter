@@ -28,7 +28,7 @@ func run() error {
 		var err error
 		files[i], err = os.Open(path)
 		if err != nil {
-			return fmt.Errorf("Error reading file %s: %s", path, err)
+			return fmt.Errorf("Error reading file %s: %w", path, err)
 		}
 	}
 
