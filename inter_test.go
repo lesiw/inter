@@ -2,9 +2,10 @@ package main_test
 
 import (
 	"io"
-	"reflect"
 	"strings"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 
 	inter "lesiw.io/inter"
 )
@@ -18,8 +19,10 @@ func TestInter(t *testing.T) {
 		expected = []string{"line2", "line3"}
 	)
 
-	if !reflect.DeepEqual(result, expected) {
-		t.Errorf("Expected %v, but got %v", expected, result)
+	if !cmp.Equal(expected, result) {
+		t.Errorf(
+			"Inter() mismatch: -want +got\n%s", cmp.Diff(expected, result),
+		)
 	}
 }
 
@@ -32,8 +35,10 @@ func TestInterWithEmptyReader(t *testing.T) {
 		expected = []string{}
 	)
 
-	if !reflect.DeepEqual(result, expected) {
-		t.Errorf("Expected %v, but got %v", expected, result)
+	if !cmp.Equal(expected, result) {
+		t.Errorf(
+			"Inter() mismatch: -want +got\n%s", cmp.Diff(expected, result),
+		)
 	}
 }
 
@@ -46,8 +51,10 @@ func TestInterWithMissingNewline(t *testing.T) {
 		expected = []string{"line2", "line3"}
 	)
 
-	if !reflect.DeepEqual(result, expected) {
-		t.Errorf("Expected %v, but got %v", expected, result)
+	if !cmp.Equal(expected, result) {
+		t.Errorf(
+			"Inter() mismatch: -want +got\n%s", cmp.Diff(expected, result),
+		)
 	}
 }
 
@@ -58,8 +65,10 @@ func TestInterWithSingleReader(t *testing.T) {
 		expected = []string{"line1", "line2", "line3"}
 	)
 
-	if !reflect.DeepEqual(result, expected) {
-		t.Errorf("Expected %v, but got %v", expected, result)
+	if !cmp.Equal(expected, result) {
+		t.Errorf(
+			"Inter() mismatch: -want +got\n%s", cmp.Diff(expected, result),
+		)
 	}
 }
 
@@ -70,8 +79,10 @@ func TestInterWithLeadingNewlines(t *testing.T) {
 		expected = []string{"line1", "line2", "line3"}
 	)
 
-	if !reflect.DeepEqual(result, expected) {
-		t.Errorf("Expected %v, but got %v", expected, result)
+	if !cmp.Equal(expected, result) {
+		t.Errorf(
+			"Inter() mismatch: -want +got\n%s", cmp.Diff(expected, result),
+		)
 	}
 }
 
@@ -84,7 +95,9 @@ func TestInterWithMultipleBlankLines(t *testing.T) {
 		expected = []string{"line2", "line3"}
 	)
 
-	if !reflect.DeepEqual(result, expected) {
-		t.Errorf("Expected %v, but got %v", expected, result)
+	if !cmp.Equal(expected, result) {
+		t.Errorf(
+			"Inter() mismatch: -want +got\n%s", cmp.Diff(expected, result),
+		)
 	}
 }

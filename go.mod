@@ -9,6 +9,8 @@ tool (
 	lesiw.io/tools/cmd/vet
 )
 
+require github.com/google/go-cmp v0.7.0
+
 require (
 	github.com/Antonboom/errname v1.1.2 // indirect
 	golang.org/x/mod v0.38.0 // indirect
